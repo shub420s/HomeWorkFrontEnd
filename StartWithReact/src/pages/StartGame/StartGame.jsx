@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 function StartGame(){
     return (
         <>
-        <Link to='/StartGame'>
-        Start the Game
-        </Link>
+        <h1>Hello welcome</h1>
+        <Link to='/StartGame'> Start </Link>
         </>
     )
 }

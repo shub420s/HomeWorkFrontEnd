@@ -2,14 +2,14 @@ import TextInput from "../TextInput/TextInput";
 import ButtonComponent from "../Butoon/ButtonComponent";
 import { useState } from "react";
 
-function TextInputForm({label,type,text,buttontype,StyleType,onsubmit,onClick}){
+function TextInputForm({label,type,text,buttontype,StyleType,onSubmit,onClick}){
 
     const [value,setValue] = useState('');
 
     function handelsubmitform(event){
        event.preventDefault();
        console.log("Form Submited",value);
-       onsubmit?.(value);
+       onSubmit?.(value);
     }
 
     function handletextInputChange(event){
@@ -33,10 +33,13 @@ function TextInputForm({label,type,text,buttontype,StyleType,onsubmit,onClick}){
                  < ButtonComponent text={text} buttontype={buttontype} StyleType={StyleType}/> 
             </div>}
 
-            {text="Show" && <div >
+
+        </form>
+
+        {buttontype && <div >
                 < ButtonComponent text="Show" buttontype={buttontype} StyleType={StyleType} onClick={onClick} /> 
              </div> }
-        </form>
+
         </>
     )
 }

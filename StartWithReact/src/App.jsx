@@ -3,11 +3,18 @@ import TextInput from "./Component/TextInput/TextInput";
 import TextInputForm from "./Component/TextInputForm/TextInputForm";
 import './index.css';
 import { useState } from "react";
-import { Router, Route } from 'react-router-dom';
+import { Router, Route, Routes, useNavigate } from 'react-router-dom';
 import PlayGame from "./pages/PlayGame/PlayGame";
 import StartGame from "./pages/StartGame/StartGame";
 
 function App() {
+
+
+  const navigate = useNavigate();
+
+  function handelSubmit(){
+       navigate('/PlayGame');
+  }
 
   const [Toggle,setToggle] = useState(false);
   const onclickShow = () => {
@@ -23,16 +30,19 @@ function App() {
       <TextInputForm label={"Enter the word"} type={Toggle ? 'text' : 'password'} text="Ok" buttontype="Submit" StyleType="Simple"
       onsubmit={(value) => console.log("value from hidden form is", value)} 
       onClick={onclickShow}
+      onSubmit={handelSubmit}
       />
        
        <div
       //  className="flex w-max h-flex item-center justify-center"
        >
       < ButtonComponent text="Start Game" buttontype="Submit" StyleType="Submit"/>
-      </div>
-       {/* <Router>
-         <Route path="/StartGame" element = {<StartGame/>} />
-       </Router> */}
+      </div> 
+
+        <Routes>
+          {/* <Route path="/StartGame" element = {<StartGame/>} /> */}
+          <Route path="/PlayGame" element = {<PlayGame/>} />
+        </Routes>
 
   </>
   )

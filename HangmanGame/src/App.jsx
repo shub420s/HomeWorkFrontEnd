@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 import StartGame from './pages/StartPage/StartGame';
 import PlayGame from './pages/PlayPage/PlayGame';
 import Sbutton from './components/Button/SimpleButton';
@@ -9,7 +9,7 @@ function App() {
   
   const navigate = useNavigate();
   
-  function handelsubmit(){
+  function handelclick(){
       navigate('/playgame');
   }
          
@@ -22,15 +22,20 @@ function App() {
       <h2 className='text-center text-2xl font-semibold' > To Play the game click on the play </h2>
         <div className='flex items-center justify-center'
          >
-          <Sbutton buttontype="submit" text="Play Game" 
-          onSubmit={handelsubmit}
+
+        <Link to= '/playgame' > 
+        <Sbutton buttontype="button" text="Play Game" 
+          onclick={handelclick}
           />
+         </Link>
+
          </div>
        
 
      <Routes>
       <Route path='/playgame' element = {<PlayGame/>} />
       <Route path="/nfp" element={<NotFoundPage/>} />
+      <Route path='/startgame' element = {<StartGame/>} />
      </Routes>
  </>
   )

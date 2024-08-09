@@ -12,8 +12,9 @@ function App() {
 
   const navigate = useNavigate();
 
-  function handelSubmit(){
-       navigate('/PlayGame');
+  function handelSubmit(value){
+    console.log(value)
+       navigate('/PlayGame', { state:{wordSelected: value} });
   }
 
   const [Toggle,setToggle] = useState(false);
@@ -40,7 +41,7 @@ function App() {
       </div> 
 
         <Routes>
-          {/* <Route path="/StartGame" element = {<StartGame/>} /> */}
+          <Route path="/StartGame" element = {<StartGame/>} />
           <Route path="/PlayGame" element = {<PlayGame/>} />
         </Routes>
 

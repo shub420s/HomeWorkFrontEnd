@@ -4,7 +4,8 @@ function StartGame(){
     return (
         <>
         <h1>Hello welcome</h1>
-        <Link to='/StartGame'> Start </Link>
+        
+        <Link to='/StartGame'> </Link>
         </>
     )
 }

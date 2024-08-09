@@ -1,7 +1,7 @@
 import { GetAllCharacter } from "./MaskTextUtility";
 
-function MaskText({text,usedletter}){
-    const Letter = GetAllCharacter(text,usedletter).split('');
+function MaskText({text,usedLetters}){
+    const Letter = GetAllCharacter(text,usedLetters).split('');
     return(
         <>
         {Letter.map((Letter,index) => {

@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import MaskText from "../../Component/MaskText/MaskText";
 import LetterButtons from "../../Component/LetterButton/LetterButton";
 import { useState } from "react";
-import HangMan from "../../Component/HangMan/HangMan";
+import HangMan from "../../Component/Hangman/HangMan";
 //usedLetters={['B' , 'E']}
 function PlayGame(){
     const [usedLetters , setUsedLetters] = useState([]);

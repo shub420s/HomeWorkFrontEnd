@@ -18,7 +18,7 @@ function App() {
       <h1 className="text-3xl font-bold underline text-center ">
       Hello Wellcome to the Game 
     </h1>
-
+ 
       <h2 className='text-center text-2xl font-semibold' > To Play the game click on the play </h2>
         <div className='flex items-center justify-center'
          >
